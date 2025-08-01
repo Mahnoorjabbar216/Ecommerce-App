@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Bright Home Lamps</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel - Manage Products</h1>
+    </header>
+    <main>
+        <section class="product-list-section">
+            <h2>All Products</h2>
+            <div id="product-list" class="product-list">
+            <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+
+        <section class="add-product-section">
+            <h2>Add New Product</h2>
+            <form id="add-product-form" class="product-form">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <input type="text" id="image" placeholder="Image filename (e.g., image1.png)" required>
+                <input type="text" id="variants" placeholder="Variants (comma separated)" required>
+                <button type="submit">➕ Add Product</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

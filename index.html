@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | E-Commerce App</title>
+  <link rel="stylesheet" href="adminstylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Our E-Commerce App</h1>
+    <p>Please select a mode to continue:</p>
+    <div class="btn-container">
+      <button onclick="window.location.href='user.html'">User Side</button>
+      <button onclick="window.location.href='admin.html'">Admin Side</button>
+    </div>
+  </div>
+
+  <script>
+    // Cursor tracking effect
+    document.addEventListener("mousemove", (e) => {
+      let x = e.clientX / window.innerWidth * 100;
+      let y = e.clientY / window.innerHeight * 100;
+      document.body.style.background = `
+        radial-gradient(circle at ${x}% ${y}%, #2c4364, #0f2027 80%)
+      `;
+    });
+  </script>
+</body>
+</html>

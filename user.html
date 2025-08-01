@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce App</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button id="cart-btn" class="cart-icon">
+            🛒 <span id="cart-count">0</span>
+        </button>
+        </ul>     
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Illuminate Your Space with Elegance</h1>
+            <p>Discover our premium floor lamps designed to bring warmth, style, and sophistication to your home.</p>
+            <button class="shop-btn" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
+
+
+     <!-- Product Grid -->
+    <section class="products-section">
+        <h2 class="section-title">Our Floor Lamps Collection</h2>
+        <div id="product-list" class="products-container">
+            <!-- Products will load dynamically -->
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart">✖</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <p id="cart-total">Total: $0</p>
+            <button id="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    
+    <section class="testimonials" data-animate>
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial-card">
+      <p>"Absolutely love the lighting collection. My living room feels so cozy now!"</p>
+      <h4>- Sarah M.</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Great customer service and fast delivery. Highly recommend!"</p>
+      <h4>- James R.</h4>
+    </div>
+    <div class="testimonial-card">
+      <p>"Beautiful designs with high-quality materials. Worth every penny!"</p>
+      <h4>- Emily W.</h4>
+    </div>
+  </div>
+</section>
+
+    <script src="script.js"></script>
+
+</body>
+
+<!--Footer-->
+<footer class="footer-part">
+    <div class="footer-signup">
+        <h2>Sign Up For Our Email Newsletter</h2>
+            <div class="floating-label-group">
+                <input type="email" id="email" placeholder=" " required />
+                <label for="email">Email</label>
+            </div>
+    </div>
+
+    <div class="footer-links">
+        <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#products">Refund Policy</a></li>
+            <li><a href="#about">Shipping Policy</a></li>
+            <li><a href="#contact">Privacy Policy</a></li>
+        </ul> 
+    </div>
+    
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 +92 321 9876543</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    
+    <script>
+        const footer = document.querySelector(".footer-part");
+
+        footer.addEventListener("mousemove", (e) => {
+        const rect = footer.getBoundingClientRect();
+        let x = ((e.clientX - rect.left) / rect.width) * 100;
+        let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            footer.style.background = `
+        radial-gradient(circle at ${x}% ${y}%, #2a4d75, #0c1725)
+        `;
+        });
+
+    footer.addEventListener("mouseleave", () => {
+        footer.style.background = "radial-gradient(circle at center, #1e3d59, #0c1725)";
+     });
+</script>
+
+</footer>
+</html>

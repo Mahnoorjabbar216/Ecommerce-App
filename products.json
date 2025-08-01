@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Industrial Wooden Lamp",
+    "price": 149,
+    "image": "image.png",
+    "model": "models/floor-lamp.glb",
+    "variants": ["Black", "White", "Gold"]
+  },
+  {
+    "id": 2,
+    "name": "Modern Arc Floor Lamp",
+    "price": 179,
+    "image": "image2.png",
+    "model": "models/arc-floor-lamp.glb",
+    "variants": ["Matte Black", "Silver", "Rose Gold"]
+  },
+  {
+    "id": 3,
+    "name": "Gloria Double Stem Floor Lamp",
+    "price": 199,
+    "image": "image3.png",
+    "model": "models/tripod-lamp.glb",
+    "variants": ["Oak", "Walnut", "Black"]
+  },
+  {
+    "id": 4,
+    "name": "Bobbins Blue Floor Lamp",
+    "price": 169,
+    "image": "image4.png",
+    "model": "models/industrial-lamp.glb",
+    "variants": ["Blue", "Iron Gray", "Black"]
+  },
+  {
+    "id": 5,
+    "name": "Vintage Floor Lamp",
+    "price": 159,
+    "image": "image5.png",
+    "model": "models/vintage-lamp.glb",
+    "variants": ["Wooden", "Black", "White"]
+  },
+  {
+    "id": 6,
+    "name": "Suri Triple Floor Lamp",
+    "price": 189,
+    "image": "image6.png",
+    "model": "models/smart-lamp.glb",
+    "variants": ["Silver", "Matte Black"]
+  },
+  {
+    "id": 7,
+    "name": " Triangluar Black Floor Lamp",
+    "price": 299,
+    "image": "image71.png",
+    "model": "models/crystal-lamp.glb",
+    "variants": ["Gold", "Silver" , "Black"]
+  },
+  {
+    "id": 8,
+    "name": "Black Metal Tripod Floor Lamp",
+    "price": 139,
+    "image": "image8.png",
+    "model": "models/scandinavian-lamp.glb",
+    "variants": ["White", "Beige", "Black"]
+  },
+  {
+    "id": 9,
+    "name": "Charlie Floor Lamp",
+    "price": 198,
+    "image": "image9.png",
+    "model": "models/scandinavian-lamp.glb",
+    "variants": ["White", "Beige", "Black"]
+  }
+]
