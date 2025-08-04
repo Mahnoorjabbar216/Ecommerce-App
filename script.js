@@ -9,7 +9,23 @@ const cartTotal = document.getElementById('cart-total');
 const closeCartBtn = document.getElementById('close-cart');
 const cartCount = document.getElementById('cart-count');
 
-// Load products from JSON
+// Show modal function
+function showModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+// Close modals
+document.getElementById("close-variant-modal").addEventListener("click", () => {
+    document.getElementById("variant-modal").style.display = "none";
+});
+document.getElementById("close-empty-cart-modal").addEventListener("click", () => {
+    document.getElementById("empty-cart-modal").style.display = "none";
+});
+document.getElementById("close-success-modal").addEventListener("click", () => {
+    document.getElementById("success-modal").style.display = "none";
+});
+
+// Load products
 fetch("products.json")
   .then(response => response.json())
   .then(data => {
@@ -24,7 +40,6 @@ fetch("products.json")
               ${variant}</button>`;
           });
 
-          // Product card HTML
           card.innerHTML = `
               <img src="${product.image}" alt="${product.name}">
               <h3 class="product-name">${product.name}</h3>
@@ -40,27 +55,26 @@ fetch("products.json")
       updateCartCount();
   });
 
-// Function to select a variant
+// Select variant
 function selectVariant(button) {
     const parent = button.parentElement;
     parent.querySelectorAll('.variant-btn').forEach(btn => btn.classList.remove('selected'));
     button.classList.add('selected');
 }
 
-// Function to add to cart with selected variant
+// Add to cart
 function addToCart(id, name, price, btn) {
     const card = btn.parentElement;
     const selectedVariant = card.querySelector('.variant-btn.selected');
 
     if (!selectedVariant) {
-        alert("Please select a variant first!");
+        showModal("variant-modal");
         return;
     }
 
     const variant = selectedVariant.getAttribute('data-variant');
     const image = card.querySelector('img').src;
 
-    // Check if product already in cart with same variant
     let existingItem = cart.find(item => item.id === id && item.variant === variant);
 
     if (existingItem) {
@@ -71,8 +85,6 @@ function addToCart(id, name, price, btn) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
-
-    // Open cart sidebar immediately
     cartSidebar.classList.add('open');
     renderCart();
 }
@@ -87,7 +99,7 @@ closeCartBtn.addEventListener('click', () => {
     cartSidebar.classList.remove('open');
 });
 
-// Render cart items
+// Render cart
 function renderCart() {
     cartItemsContainer.innerHTML = '';
     if (cart.length === 0) {
@@ -138,25 +150,22 @@ function updateCartCount() {
     cartCount.textContent = cart.length;
 }
 
+// Scroll to products
 function scrollToProducts() {
     document.querySelector('.products-section').scrollIntoView({ behavior: 'smooth' });
 }
-// Checkout button functionality
+
+// Checkout
 document.getElementById("checkout-btn").addEventListener("click", () => {
     if (cart.length === 0) {
-        alert("🛒 Your cart is empty! Add some products first.");
+        showModal("empty-cart-modal");
         return;
     }
 
-    // Simulate checkout process
-    alert("✅ Thank you for your purchase! Your order has been placed successfully.");
-
-    // Clear cart after checkout
+    showModal("success-modal");
     cart = [];
     localStorage.removeItem("cart");
     updateCartCount();
     renderCart();
-
-    // Close cart sidebar after checkout
     cartSidebar.classList.remove('open');
 });
